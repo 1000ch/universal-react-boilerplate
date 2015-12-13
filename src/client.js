@@ -15,8 +15,6 @@ app.rehydrate(dehydratedState, (error, context) => {
   ReactDOM.render(
     createElementWithContext(context),
     document.getElementById('app'),
-    () => {
-      console.log('React Rendered')
-    }
+    () => console.log('React Rendered')
   );
 });

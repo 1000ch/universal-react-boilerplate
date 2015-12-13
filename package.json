@@ -1,29 +1,28 @@
 {
-  "name": "universal-react",
-  "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "universal-react-boilerplate",
   "scripts": {
     "start": "node dist/server.js",
-    "babel": "babel src --out-dir dist",
-    "babel:watch": "babel src --out-dur dist --watch",
-    "client": "npm run client:bundle && npm run client:minify",
-    "client:bundle": "browserify --entry dist/client.js > dist/bundle.js",
-    "client:minify": "uglifyjs --compress --mangle -- dist/bundle.js > dist/bundle.min.js",
-    "client:watch": "watchify dist/client.js -o dist/bundle.js -v",
-    "watch": "npm run babel:watch & npm run client:watch",
-    "build": "npm run babel && npm run client"
+    "babel": "babel --out-dir dist src",
+    "babel:watch": "babel --out-dir dist --watch src",
+    "js": "mkdir -p dist/js && npm run js:bundle && npm run js:minify",
+    "js:bundle": "browserify --entry dist/client.js > dist/js/app.min.js",
+    "js:minify": "uglifyjs --compress --mangle -- dist/js/app.min.js > dist/js/app.min.js",
+    "js:watch": "watchify -o dist/js/app.min.js --verbose dist/client.js",
+    "css": "mkdir -p dist/css && npm run css:minify",
+    "css:minify": "csso --input src/styles/app.css --output dist/css/app.min.css",
+    "watch": "npm run babel:watch & npm run js:watch",
+    "build": "npm run babel && npm run js && npm run css"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/1000ch/universal-react.git"
+    "url": "git+https://github.com/1000ch/universal-react-boilerplate.git"
   },
   "author": "1000ch",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/1000ch/universal-react/issues"
+    "url": "https://github.com/1000ch/universal-react-boilerplate/issues"
   },
-  "homepage": "https://github.com/1000ch/universal-react#readme",
+  "homepage": "https://github.com/1000ch/universal-react-boilerplate#readme",
   "dependencies": {
     "body-parser": "^1.14.1",
     "cookie-parser": "^1.4.0",
@@ -38,6 +37,7 @@
   "devDependencies": {
     "babel": "^5.8.34",
     "browserify": "^12.0.1",
+    "csso": "^1.4.4",
     "uglify-js": "^2.6.1",
     "watchify": "^3.6.1"
   }
