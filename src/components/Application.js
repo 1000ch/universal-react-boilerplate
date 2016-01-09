@@ -17,9 +17,11 @@ class Application extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     const newProps = this.props;
+
     if (newProps.pageTitle === prevProps.pageTitle) {
       return;
     }
+
     document.title = newProps.pageTitle;
   }
 }
@@ -27,8 +29,9 @@ class Application extends React.Component {
 export default provideContext(handleHistory(connectToStores(
   Application,
   [ApplicationStore],
-  function (context, props) {
+  (context, props) => {
     const appStore = context.getStore(ApplicationStore);
+
     return {
       pageTitle: appStore.getPageTitle()
     };

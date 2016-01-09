@@ -6,6 +6,7 @@ class ApplicationStore extends BaseStore {
     super(dispatcher);
     this.pageTitle = '';
   }
+
   handlePageTitle(currentRoute) {
     this.dispatcher.waitFor(RouteStore, () => {
       if (currentRoute.title) {
@@ -14,14 +15,17 @@ class ApplicationStore extends BaseStore {
       }
     });
   }
+
   getPageTitle() {
     return this.pageTitle;
   }
+
   dehydrate() {
     return {
       pageTitle: this.pageTitle
     };
   }
+
   rehydrate(state) {
     this.pageTitle = state.pageTitle;
   }
