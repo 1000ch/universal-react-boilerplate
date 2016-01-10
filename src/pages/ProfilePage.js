@@ -1,7 +1,12 @@
 import React from 'react';
 import Debug from '../components/Debug';
 
-export default class Profile extends React.Component {
+export default class ProfilePage extends React.Component {
+
+  static contextTypes = {
+    executeAction : React.PropTypes.func
+  };
+
   render() {
     return (
       <div>

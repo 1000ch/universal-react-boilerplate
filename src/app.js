@@ -1,13 +1,23 @@
 import Fluxible from 'fluxible';
+import { RouteStore } from 'fluxible-router';
+import fetchrPlugin from 'fluxible-plugin-fetchr';
 import Application from './components/Application';
 import ApplicationStore from './stores/ApplicationStore';
-import RouteStore from './stores/RouteStore';
+import IndexRoute from './routes/IndexRoute';
+import ProfileRoute from './routes/ProfileRoute';
 
 const app = new Fluxible({
   component: Application
 });
 
-app.registerStore(RouteStore);
-app.registerStore(ApplicationStore);
+app.plug(fetchrPlugin({
+  xhrPath: '/api'
+}));
 
-module.exports = app;
+app.registerStore(ApplicationStore);
+app.registerStore(RouteStore.withStaticRoutes({
+  index: IndexRoute,
+  profile: ProfileRoute
+}));
+
+export default app;

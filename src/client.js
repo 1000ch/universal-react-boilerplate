@@ -3,7 +3,8 @@ import React from 'react';
 import { createElementWithContext } from 'fluxible-addons-react';
 import app from './app';
 
-window.React = ReactDOM;
+window.React = React;
+window.ReactDOM = ReactDOM;
 
 app.rehydrate(window.__CONTEXT__, (error, context) => {
   if (error) {

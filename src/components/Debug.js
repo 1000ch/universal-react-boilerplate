@@ -1,5 +1,5 @@
 import React from 'react';
-import { provideContext } from 'fluxible';
+import provideContext from 'fluxible-addons-react/provideContext';
 import { NavLink, handleHistory } from 'fluxible-router';
 
 class Debug extends React.Component {

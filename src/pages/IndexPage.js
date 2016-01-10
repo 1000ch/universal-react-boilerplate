@@ -1,7 +1,12 @@
 import React from 'react';
 import Debug from '../components/Debug';
 
-export default class Index extends React.Component {
+export default class IndexPage extends React.Component {
+
+  static contextTypes = {
+    executeAction : React.PropTypes.func
+  };
+
   render() {
     return (
       <div>

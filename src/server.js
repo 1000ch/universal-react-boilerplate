@@ -41,6 +41,7 @@ function prepareServer(server) {
       if (error) {
         return next(error);
       }
+
       const exposeState = `window.__CONTEXT__=${serialize(app.dehydrate(context))};`;
       const markup = ReactDOMServer.renderToString(createElementWithContext(context));
       const documentElement = React.createElement(Document, {
