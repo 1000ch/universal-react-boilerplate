@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "comma-dangle": [2, "never"],
+    "no-console": 0
+  },
+  "plugins": [
+    "react"
+  ],
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "globals": {
+    "atom": true
+  },
+  "env": {
+    "es6": true,
+    "node": true
+  }
+}
