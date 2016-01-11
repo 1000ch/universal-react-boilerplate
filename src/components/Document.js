@@ -1,11 +1,33 @@
 import React from 'react';
 import ApplicationStore from '../stores/ApplicationStore';
 
-export default class Document extends React.Component {
+class Document extends React.Component {
+
+  static propTypes = {
+    context: React.PropTypes.object,
+    html: React.PropTypes.string,
+    state: React.PropTypes.object
+  };
+
+  static contextTypes = {
+    getStore: React.PropTypes.func,
+    executeAction: React.PropTypes.func
+  };
+
+  static defaultProps = {
+    context: {},
+    html: '',
+    state: {}
+  };
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
-    let title = this.props.context.getStore(ApplicationStore).getPageTitle();
-    let content = { __html: this.props.markup };
-    let script = { __html: this.props.state };
+    const title = this.props.context.getStore(ApplicationStore).getState().pageTitle;
+    const content = { __html: this.props.html };
+    const script = { __html: this.props.state };
 
     return (
       <html>
@@ -24,3 +46,5 @@ export default class Document extends React.Component {
     );
   }
 }
+
+export default Document;

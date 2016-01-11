@@ -1,11 +1,16 @@
 import React from 'react';
 import Debug from '../components/Debug';
 
-export default class ProfilePage extends React.Component {
+class ProfilePage extends React.Component {
 
   static contextTypes = {
-    executeAction : React.PropTypes.func
+    getStore: React.PropTypes.func,
+    executeAction: React.PropTypes.func
   };
+
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     return (
@@ -17,3 +22,5 @@ export default class ProfilePage extends React.Component {
     );
   }
 }
+
+export default ProfilePage;

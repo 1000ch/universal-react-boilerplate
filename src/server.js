@@ -10,17 +10,6 @@ import { navigateAction } from 'fluxible-router';
 import app from './app';
 import Document from './components/Document';
 
-const server = createServer();
-const port = process.env.PORT || 5000;
-
-function createServer() {
-  let server = express();
-
-  prepareServer(server);
-
-  return server;
-}
-
 function prepareServer(server) {
   // set up request parser
   server.use(bodyParser.urlencoded({ extended: false }));
@@ -36,25 +25,38 @@ function prepareServer(server) {
     const context = app.createContext();
 
     context.getActionContext().executeAction(navigateAction, {
-      url : request.url
+      url: request.url
     }, error => {
       if (error) {
         return next(error);
       }
 
       const exposeState = `window.__CONTEXT__=${serialize(app.dehydrate(context))};`;
-      const markup = ReactDOMServer.renderToString(createElementWithContext(context));
+      const html = ReactDOMServer.renderToString(createElementWithContext(context));
       const documentElement = React.createElement(Document, {
-        state   : exposeState,
-        context : context.getComponentContext(),
-        markup  : markup
+        state: exposeState,
+        context: context.getComponentContext(),
+        html
       });
-      const html = ReactDOMServer.renderToStaticMarkup(documentElement);
+      const markup = ReactDOMServer.renderToStaticMarkup(documentElement);
 
-      response.send(html);
+      response.send(markup);
     });
   });
 }
+
+function createServer() {
+  // create Express instance
+  const server = express();
+
+  // set up server
+  prepareServer(server);
+
+  return server;
+}
+
+const server = createServer();
+const port = process.env.PORT || 5000;
 
 server.listen(port);
 console.info(`listening on ${port}...`);

@@ -14,7 +14,9 @@ app.rehydrate(window.__CONTEXT__, (error, context) => {
   const reactElement = createElementWithContext(context);
   const mountNode = document.getElementById('app');
 
-  ReactDOM.render(reactElement, mountNode,() => {
-    console.log('React Rendered');
-  });
+  ReactDOM.render(
+    reactElement,
+    mountNode,
+    () => console.log('React Rendered')
+  );
 });

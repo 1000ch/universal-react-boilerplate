@@ -14,8 +14,10 @@ class ApplicationStore extends BaseStore {
     }
   }
 
-  getPageTitle() {
-    return this.pageTitle;
+  getState() {
+    return {
+      pageTitle: this.pageTitle
+    };
   }
 
   dehydrate() {
@@ -31,7 +33,7 @@ class ApplicationStore extends BaseStore {
 
 ApplicationStore.storeName = 'ApplicationStore';
 ApplicationStore.handlers = {
-  'NAVIGATE_SUCCESS': 'handlePageTitle'
+  NAVIGATE_SUCCESS: 'handlePageTitle'
 };
 
 export default ApplicationStore;
