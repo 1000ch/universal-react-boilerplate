@@ -13,7 +13,6 @@ import ItemService from './server/services/ItemService';
 import ItemListService from './server/services/ItemListService';
 
 const fetchrPlugin = app.getPlugin('FetchrPlugin');
-fetchrPlugin.registerService(CategoryService);
 fetchrPlugin.registerService(ItemService);
 fetchrPlugin.registerService(ItemListService);
 

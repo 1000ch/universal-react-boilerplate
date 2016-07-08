@@ -1,0 +1,58 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+body {
+  font-size: 1.4em;
+  font-weight: normal;
+  line-height: 1.4;
+  color: var(--textColor);
+  background-color: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+button {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+iframe {
+  border: 0;
+}
+
+ol,
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}

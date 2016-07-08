@@ -10,8 +10,8 @@ const app = new Fluxible({
 });
 
 app.plug(fetchrPlugin({
-  corsPath : 'http://localhost:5000',
-  xhrPath  : '/'
+  corsPath : 'https://qiita.com',
+  xhrPath  : '/api/v2'
 }));
 
 app.registerStore(ApplicationStore);
