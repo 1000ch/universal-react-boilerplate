@@ -60,10 +60,9 @@
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
     "cssnano": "^3.7.1",
-    "eslint": "^2.13.1",
-    "eslint-config-airbnb": "^9.0.1",
+    "eslint": "^3.0.1",
     "eslint-plugin-import": "^1.9.2",
-    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-jsx-a11y": "^2.0.0",
     "eslint-plugin-react": "^5.2.2",
     "nodemon": "^1.9.2",
     "postcss-cli": "^2.5.2",
@@ -87,22 +86,32 @@
   },
   "eslintConfig": {
     "parser": "babel-eslint",
-    "extends": "eslint-config-airbnb",
+    "extends": [
+      "eslint:recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:jsx-a11y/recommended",
+      "plugin:react/recommended"
+    ],
+    "plugins": [
+      "import",
+      "jsx-a11y",
+      "react"
+    ],
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    },
     "rules": {
       "comma-dangle": [
         "error",
         "never"
       ],
-      "global-require": [
-        0
-      ],
       "no-class-assign": [
         0
       ],
-      "no-underscore-dangle": [
-        0
-      ],
-      "no-useless-constructor": [
+      "react/no-danger": [
         0
       ],
       "key-spacing": [

@@ -14,7 +14,7 @@ class Application extends BaseComponent {
     super(props);
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     if (this.props.pageTitle === prevProps.pageTitle) {
       return;
     }
@@ -33,7 +33,7 @@ class Application extends BaseComponent {
   }
 }
 
-Application = connectToStores(Application, [ApplicationStore], (context, props) => {
+Application = connectToStores(Application, [ApplicationStore], context => {
   return context.getStore(ApplicationStore).getState();
 });
 

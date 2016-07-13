@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'fluxible-router';
 import { connectToStores } from 'fluxible-addons-react';
 import BaseComponent from '../bases/BaseComponent';
 import ItemList from '../components/ItemList';
@@ -34,7 +33,7 @@ class IndexPage extends BaseComponent {
   }
 }
 
-IndexPage = connectToStores(IndexPage, [ItemStore], (context, props) => {
+IndexPage = connectToStores(IndexPage, [ItemStore], context => {
   return {
     items : context.getStore(ItemStore).getItems()
   };

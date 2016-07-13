@@ -30,7 +30,7 @@ class Document extends BaseComponent {
     const script = { __html : this.props.state };
 
     return (
-      <html>
+      <html lang>
         <head>
           <meta charSet="utf-8" />
           <title>{title}</title>

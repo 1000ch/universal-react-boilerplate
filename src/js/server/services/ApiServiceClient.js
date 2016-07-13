@@ -23,4 +23,4 @@ export default class ApiServiceClient {
   request(config) {
     return axios(config);
   }
-};
+}

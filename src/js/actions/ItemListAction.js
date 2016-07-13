@@ -1,4 +1,4 @@
-function fetchItems(context, payload, done) {
+export function fetchItems(context, payload, done) {
   const config = {
     cors : true
   };
@@ -15,5 +15,3 @@ function fetchItems(context, payload, done) {
     done();
   });
 }
-
-export default { fetchItems };

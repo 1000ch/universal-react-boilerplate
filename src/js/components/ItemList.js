@@ -22,6 +22,6 @@ export default class ItemList extends BaseComponent {
           return <Item key={index} {...item}></Item>;
         })}
       </ul>
-    );;
+    );
   }
 }
