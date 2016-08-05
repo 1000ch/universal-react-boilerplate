@@ -6,7 +6,7 @@
 ## Getting Started
 
 ```bash
-$ git clone https://github.com/1000ch/grunt-image.git
+$ git clone https://github.com/1000ch/universal-react-boilerplate.git
 $ cd ./universal-react-boilerplate
 $ npm install
 ```
