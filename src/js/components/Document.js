@@ -41,6 +41,7 @@ class Document extends BaseComponent {
         <body>
           <div id="app" dangerouslySetInnerHTML={content}></div>
           <script dangerouslySetInnerHTML={script}></script>
+          <script src="/js/lib.js"></script>
           <script src="/js/app.js"></script>
         </body>
       </html>
