@@ -33,11 +33,13 @@ class Application extends BaseComponent {
   }
 }
 
-Application = connectToStores(Application, [ApplicationStore], context => {
-  return context.getStore(ApplicationStore).getState();
-});
+const storeConnectedApplication = connectToStores(
+  Application,
+  [ApplicationStore],
+  context => context.getStore(ApplicationStore).getState()
+);
 
-Application = handleHistory(Application);
-Application = provideContext(Application);
+const historyHandledApplication = handleHistory(storeConnectedApplication);
+const contextProvidedApplication = provideContext(historyHandledApplication);
 
-export default Application;
+export default contextProvidedApplication;
