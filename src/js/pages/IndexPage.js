@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connectToStores } from 'fluxible-addons-react';
 import BaseComponent from '../bases/BaseComponent';
 import ItemList from '../components/ItemList';
@@ -6,13 +7,13 @@ import ItemStore from '../stores/ItemStore';
 
 class IndexPage extends BaseComponent {
   static contextTypes = {
-    getStore      : React.PropTypes.func,
-    executeAction : React.PropTypes.func
+    getStore      : PropTypes.func,
+    executeAction : PropTypes.func
   };
 
   static propTypes = {
-    categories : React.PropTypes.arrayOf(React.PropTypes.object),
-    items      : React.PropTypes.arrayOf(React.PropTypes.object)
+    categories : PropTypes.arrayOf(PropTypes.object),
+    items      : PropTypes.arrayOf(PropTypes.object)
   };
 
   static defaultProps = {

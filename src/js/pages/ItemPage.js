@@ -1,22 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connectToStores } from 'fluxible-addons-react';
 import BaseComponent from '../bases/BaseComponent';
 import ItemStore from '../stores/ItemStore';
 
 class ItemPage extends BaseComponent {
   static contextTypes = {
-    getStore      : React.PropTypes.func,
-    executeAction : React.PropTypes.func
+    getStore      : PropTypes.func,
+    executeAction : PropTypes.func
   };
 
   static propTypes = {
-    created_at : React.PropTypes.string,
-    id         : React.PropTypes.string,
-    tags       : React.PropTypes.arrayOf(React.PropTypes.object),
-    title      : React.PropTypes.string,
-    updated_at : React.PropTypes.string,
-    url        : React.PropTypes.string,
-    user       : React.PropTypes.object
+    created_at : PropTypes.string,
+    id         : PropTypes.string,
+    tags       : PropTypes.arrayOf(PropTypes.object),
+    title      : PropTypes.string,
+    updated_at : PropTypes.string,
+    url        : PropTypes.string,
+    user       : PropTypes.object
   };
 
   static defaultProps = {

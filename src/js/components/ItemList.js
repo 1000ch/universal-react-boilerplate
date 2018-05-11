@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import BaseComponent from '../bases/BaseComponent';
 import Item from './Item';
 
 export default class ItemList extends BaseComponent {
   static propTypes = {
-    items : React.PropTypes.arrayOf(React.PropTypes.object)
+    items : PropTypes.arrayOf(PropTypes.object)
   };
 
   static defaultProps = {

@@ -38,40 +38,34 @@
   },
   "homepage": "https://github.com/1000ch/universal-react-boilerplate#readme",
   "dependencies": {
-    "axios": "^0.15.2",
+    "axios": "^0.18.0",
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
-    "fluxible": "^1.2.0",
-    "fluxible-addons-react": "^0.2.8",
+    "fluxible": "^1.4.0",
+    "fluxible-addons-react": "^0.2.14",
     "fluxible-plugin-fetchr": "^0.3.11",
-    "fluxible-router": "^1.0.0-alpha.5",
-    "normalize.css": "^5.0.0",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
+    "fluxible-router": "^2.0.0-beta.0",
+    "normalize.css": "^8.0.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "serialize-javascript": "^1.3.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",
     "babel-cli": "^6.23.0",
-    "babel-eslint": "^7.1.0",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-class-properties": "^6.23.0",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-es2016": "^6.22.0",
     "babel-preset-react": "^6.23.0",
-    "babelify": "^7.3.0",
-    "browserify": "^14.1.0",
+    "babelify": "^8.0.0",
+    "browserify": "^16.2.2",
     "cssnano": "^3.10.0",
-    "eslint": "^3.18.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.2",
     "nodemon": "^1.11.0",
     "postcss-cli": "^3.0.0",
     "postcss-import": "^9.1.0",
-    "stylelint": "^7.9.0",
-    "stylelint-config-standard": "^16.0.0",
     "watchify": "^3.9.0"
   },
   "babel": {
@@ -84,48 +78,5 @@
       "add-module-exports",
       "transform-class-properties"
     ]
-  },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": [
-      "eslint:recommended",
-      "plugin:import/errors",
-      "plugin:import/warnings",
-      "plugin:jsx-a11y/recommended",
-      "plugin:react/recommended"
-    ],
-    "plugins": [
-      "import",
-      "jsx-a11y",
-      "react"
-    ],
-    "env": {
-      "browser": true,
-      "node": true,
-      "es6": true
-    },
-    "rules": {
-      "comma-dangle": [
-        "error",
-        "never"
-      ],
-      "no-class-assign": [
-        0
-      ],
-      "react/no-danger": [
-        0
-      ],
-      "key-spacing": [
-        "error",
-        {
-          "beforeColon": true,
-          "afterColon": true,
-          "align": "colon"
-        }
-      ]
-    }
-  },
-  "stylelint": {
-    "extends": "stylelint-config-standard"
   }
 }

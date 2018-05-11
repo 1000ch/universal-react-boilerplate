@@ -1,17 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ApplicationStore from '../stores/ApplicationStore';
 import BaseComponent from '../bases/BaseComponent';
 
 class Document extends BaseComponent {
   static propTypes = {
-    context : React.PropTypes.object,
-    html    : React.PropTypes.string,
-    state   : React.PropTypes.string
+    context : PropTypes.object,
+    html    : PropTypes.string,
+    state   : PropTypes.string
   };
 
   static contextTypes = {
-    getStore      : React.PropTypes.func,
-    executeAction : React.PropTypes.func
+    getStore      : PropTypes.func,
+    executeAction : PropTypes.func
   };
 
   static defaultProps = {
